@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #171821;
+        }
+        .stage{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 34px;
+            padding: 56px 32px;
+        }
+        .cube{
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 104px;
+            height: 104px;
+            color: #fff;
+            font: 600 16px/1 sans-serif;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .c1{
+            background: linear-gradient(135deg, #ff9255, #ff5e62);
+            box-shadow: 0 10px 24px rgba(255, 94, 98, .35);
+        }
+        .c2{
+            border-radius: 11px;
+            background: linear-gradient(135deg, #32d6a3, #2ec88e);
+            box-shadow: 0 10px 24px rgba(46, 200, 142, .3);
+        }
+        .c3{
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ac8caf, #786b98);
+            box-shadow: 0 10px 24px rgba(151, 124, 174, .3);
+        }
+        .c4{
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd66c, #ff9a69);
+            box-shadow: 0 10px 24px rgba(255, 172, 93, .3);
+        }
+        .c5{
+            border-radius: 8px;
+            background: rgba(82, 145, 126, .75);
+            box-shadow: 0 10px 24px rgba(82, 145, 126, .2);
+        }
+        .c6{
+            border-radius: 50%;
+            background: radial-gradient(circle at 65% 35%, #c29abd, #83709f);
+            box-shadow: 0 10px 24px rgba(166, 133, 181, .3);
+        }
+        .cube::after{
+            content: "hover";
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+        .cube:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 0 24px var(--hover-shadow, rgba(255, 255, 255, .28));
+        }
+        .c1:hover{ --hover-shadow: rgba(255, 94, 98, .4); }
+        .c2:hover{ --hover-shadow: rgba(46, 200, 142, .4); }
+        .c3:hover{ --hover-shadow: rgba(151, 124, 174, .4); }
+        .c4:hover{ --hover-shadow: rgba(255, 172, 93, .4); }
+        .c5:hover{ --hover-shadow: rgba(82, 145, 126, .35); }
+        .c6:hover{ --hover-shadow: rgba(166, 133, 181, .4); }
+        .cube:hover::after{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="cube c1"></div>
+        <div class="cube c2"></div>
+        <div class="cube c3"></div>
+        <div class="cube c4"></div>
+        <div class="cube c5"></div>
+        <div class="cube c6"></div>
+    </div>
+</body>
+</html>
